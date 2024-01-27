@@ -49,24 +49,35 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(seletectedIndex == MyConstants.homeIndex
-              ? MyConstants.home
-              : MyConstants.noti)),
+          title: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            seletectedIndex == MyConstants.homeIndex
+                ? MyConstants.home
+                : MyConstants.noti,
+            style: const TextStyle(
+                fontSize: MyConstants.fontHeader,
+                color: MyConstants.colorTextWithBackground),
+          ),
+        ],
+      ),
+      backgroundColor: MyConstants.colorAppbar,),
       body: buildContentSeletected(),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home,
                 color: seletectedIndex == MyConstants.homeIndex
-                    ? Colors.blue
-                    : Colors.black),
+                    ? MyConstants.colorIconSelected
+                    : MyConstants.colorIconUnselected),
             label: "",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications_active,
                 color: seletectedIndex == MyConstants.notiIndex
-                    ? Colors.blue
-                    : Colors.black),
+                    ? MyConstants.colorIconSelected
+                    : MyConstants.colorIconUnselected),
             label: "",
           ),
         ],
