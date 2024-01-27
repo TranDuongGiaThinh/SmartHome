@@ -26,7 +26,7 @@ class DevicePresenter {
     if(device.name == MyConstants.light) {
       return device.isOn ? Icons.lightbulb : Icons.lightbulb_outline;
     } else if(device.name == MyConstants.fan) {
-      return device.isOn ? Icons.cyclone : Icons.sync_disabled_outlined;
+      return Icons.cyclone;
     } else {
       return device.isOn ? Icons.tv : Icons.tv_off;
     }

@@ -12,7 +12,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.only(top: 10, bottom: 10, left: 40, right: 40),
       margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
@@ -22,7 +22,7 @@ class CustomButton extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Icon(
                   presenter.getIconOfDevice(device),
@@ -31,17 +31,20 @@ class CustomButton extends StatelessWidget {
                       : MyConstants.colorIconLightOff,
                 ),
                 Text(
-                  device.name,
+                  device.isOn
+                      ? "${device.name} (${MyConstants.on})"
+                      : device.name,
                   style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: MyConstants.fontHeader,
                       color: MyConstants.colorText),
                 ),
                 Switch(
-                    value: device.isOn,
-                    onChanged: (newValue) {
-                      presenter.onChangeValue(device);
-                    })
+                  value: device.isOn,
+                  onChanged: (newValue) {
+                    presenter.onChangeValue(device);
+                  },
+                ),
               ],
             ),
           ]),
