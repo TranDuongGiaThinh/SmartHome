@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/constants.dart';
-import 'package:smart_home/logo/logo.dart';
 import 'package:smart_home/sign_up/sign_up_presenter.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -18,63 +17,90 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              MyConstants.hello,
-              style: TextStyle(
-                  fontSize: MyConstants.fontHeader,
-                  fontWeight: FontWeight.bold,
-                  color: MyConstants.colorTextInSignUp),
-            ),
-            const Text(
-              MyConstants.wellcome,
-              style: TextStyle(
-                  fontSize: MyConstants.fontText,
-                  fontWeight: FontWeight.bold,
-                  color: MyConstants.colorTextInSignUp),
-            ),
-            const Logo(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: presenter.txt,
-                    decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.symmetric(
-                          vertical: 10, horizontal: 20),
-                      hintText: MyConstants.enterName,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(
-                            color: MyConstants.colorContentUnselected),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(
-                            color: MyConstants.colorContentSelected),
-                      ),
-                    ),
+        padding: const EdgeInsets.only(top: 30, left: 10, right: 10, bottom: 10),
+        child: Container(
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(MyConstants.logo), fit: BoxFit.fill)),
+          child: Column(
+            mainAxisAlignment: presenter.isTextFieldFocus
+                ? MainAxisAlignment.start
+                : MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    MyConstants.hello,
+                    style: TextStyle(
+                        fontSize: MyConstants.fontHeader,
+                        fontWeight: FontWeight.bold,
+                        color: MyConstants.colorTextInSignUp),
                   ),
-                ),
-                const SizedBox(width: 5),
-                ElevatedButton(
-                  onPressed: () => presenter.onClickButton(widget.callBack),
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    fixedSize: const Size(50, 50),
+                  Text(
+                    MyConstants.wellcome,
+                    style: TextStyle(
+                        fontSize: MyConstants.fontText,
+                        fontWeight: FontWeight.bold,
+                        color: MyConstants.colorTextInSignUp),
                   ),
-                  child: const Text(MyConstants.ok),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  presenter.message.isEmpty
+                      ? Container()
+                      : Text(
+                          presenter.message,
+                          style: const TextStyle(
+                              fontSize: MyConstants.fontText,
+                              color: MyConstants.colorMessage),
+                        ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          controller: presenter.txt,
+                          decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 20),
+                            hintText: MyConstants.enterName,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: const BorderSide(
+                                  color: MyConstants.colorContentUnselected),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: const BorderSide(
+                                  color: MyConstants.colorContentSelected),
+                            ),
+                          ),
+                          onTap: () =>
+                              presenter.onTapTextField(() => setState(() {})),
+                        ),
+                      ),
+                      const SizedBox(width: 5),
+                      ElevatedButton(
+                        onPressed: () => presenter.onClickButton(
+                            widget.callBack, () => setState(() {})),
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          fixedSize: const Size(70, 50),
+                        ),
+                        child: const Text(MyConstants.ok),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
