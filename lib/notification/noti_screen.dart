@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_home/constants.dart';
 import 'package:smart_home/notification/noti_presenter.dart';
 import '../logo/logo.dart';
 import 'noti_card.dart';
@@ -36,14 +37,17 @@ class _NotiScreenState extends State<NotiScreen> {
     }
     return Padding(
       padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
-      child: ListView(
-        children: [
-          for (int i = 0; i < presenter!.notifications.length; i++)
-            NotiCard(
-              noti: presenter!.notifications[i],
-              presenter: presenter!,
-            ),
-        ],
+      child: Container(
+        color: MyConstants.colorBackgroundApp,
+        child: ListView(
+          children: [
+            for (int i = 0; i < presenter!.notifications.length; i++)
+              NotiCard(
+                noti: presenter!.notifications[i],
+                presenter: presenter!,
+              ),
+          ],
+        ),
       ),
     );
   }
