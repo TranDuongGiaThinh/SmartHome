@@ -28,7 +28,7 @@ class MyConstants {
   static const int fanIndex = 1;
   static const int tiviIndex = 2;
 
-  static const String appName = "AppName";
+  static const String appName = "SmartHome";
   static const String hello = "Xin Chào!";
   static const String wellcome = "Chào mừng bạn đến với $appName";
 
