@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyConstants {
+  static const double fontNotiTime = 10.0;
   static const double fontText = 13.0;
   static const double fontHeader = 16.0;
   
@@ -18,6 +19,7 @@ class MyConstants {
 
   static const Color colorAppbar = Colors.green;
   static const Color colorButton = Colors.greenAccent;
+  static const Color colorCard = Colors.greenAccent;
 
   static const int homeIndex = 0;
   static const int notiIndex = 1;
