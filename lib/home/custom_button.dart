@@ -39,12 +39,15 @@ class CustomButton extends StatelessWidget {
                       fontSize: MyConstants.fontHeader,
                       color: MyConstants.colorText),
                 ),
-                Switch(
-                  value: device.isOn,
-                  onChanged: (newValue) {
-                    presenter.onClickButtonOnOff(device);
-                  },
-                ),
+                IconButton(
+                  onPressed: () => presenter.onClickButtonOnOff(device),
+                  icon: Icon(
+                    Icons.power_settings_new,
+                    color: device.isOn
+                        ? MyConstants.colorIconPowerOn
+                        : MyConstants.colorIconLightOff,
+                  ),
+                )
               ],
             ),
           ]),

@@ -17,6 +17,8 @@ class MyConstants {
 
   static const Color colorIconLightOn = Colors.yellowAccent;
   static const Color colorIconLightOff = Colors.black54;
+  static const Color colorIconPowerOn = Colors.redAccent;
+  static const Color colorIconPowerOff = Colors.black54;
 
   static const Color colorAppbar = Colors.green;
   static const Color colorButton = Colors.greenAccent;
