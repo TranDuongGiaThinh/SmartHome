@@ -65,4 +65,8 @@ class MyConstants {
   static const String guageCelsius = "Nhiệt độ";
   static const String guageHumidity = "Độ ẩm";
   static const String guageUsage = "Thiết bị đang bật";
+  
+  static const String cancel = "Hủy bỏ";
+  static const String confirm = "Xác nhận";
+  static const String contentConfirmTurnOffAll = "Bạn muốn tắt tất cả thiết bị?";
 }

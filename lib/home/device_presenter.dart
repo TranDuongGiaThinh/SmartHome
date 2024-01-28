@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_home/confirm_dialog/confirm_dialog.dart';
 import 'package:smart_home/models/device.dart';
 
 import '../constants.dart';
@@ -14,6 +15,22 @@ class DevicePresenter {
       Device(id: 1, name: MyConstants.fan, isOn: false),
       Device(id: 2, name: MyConstants.tivi, isOn: false),
     ];
+  }
+
+  onClickButtonTurnOffAll(BuildContext context) {
+    if (getUsageRate() > 0) {
+      ConfirmationDialog.show(
+              context: context, title: MyConstants.confirm, content: MyConstants.contentConfirmTurnOffAll)
+          .then((value) {
+        if (value) {
+          //sv
+          for (int i = 0; i < devices.length; i++) {
+            devices[i].isOn = false;
+          }
+          reload();
+        }
+      });
+    }
   }
 
   onClickButtonOnOff(Device device) {
@@ -44,27 +61,22 @@ class DevicePresenter {
   Color getColorUsageRate(String guageName) {
     int rate = getUsageRate();
 
-    if(guageName != MyConstants.guageUsage){
+    if (guageName != MyConstants.guageUsage) {
       return MyConstants.colorGuage;
     }
-    
-    if(rate <= 20){
+
+    if (rate <= 20) {
       return MyConstants.colorGuage20Percent;
-    }
-    else if (rate <= 35){
+    } else if (rate <= 35) {
       return MyConstants.colorGuage35Percent;
-    }
-    else if (rate <= 50){
+    } else if (rate <= 50) {
       return MyConstants.colorGuage50Percent;
-    }
-    else if (rate <= 65){
+    } else if (rate <= 65) {
       return MyConstants.colorGuage65Percent;
-    }
-    else if (rate <= 80){
+    } else if (rate <= 80) {
       return MyConstants.colorGuage80Percent;
-    }
-    else{
+    } else {
       return MyConstants.colorGuage100Percent;
-    } 
+    }
   }
 }

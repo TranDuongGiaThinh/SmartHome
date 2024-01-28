@@ -35,11 +35,22 @@ class Guage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                icon,
-                size: height / 3,
-                color: MyConstants.colorIcon,
-              ),
+              name == MyConstants.guageUsage
+                  ? GestureDetector(
+                      onTap:()=> presenter.onClickButtonTurnOffAll(context),
+                      child: Icon(
+                        icon,
+                        size: height / 3,
+                        color: presenter.getUsageRate() > 0
+                            ? MyConstants.colorIconPowerOn
+                            : MyConstants.colorIcon,
+                      ),
+                    )
+                  : Icon(
+                      icon,
+                      size: height / 3,
+                      color: MyConstants.colorIcon,
+                    ),
               Text(
                 "$value $unit",
                 style: TextStyle(
