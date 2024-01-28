@@ -18,7 +18,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,40 +38,40 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   color: MyConstants.colorTextInSignUp),
             ),
             const Logo(),
-            Padding(
-              padding: const EdgeInsets.only(left: 30, right: 30, bottom: 10),
-              child: TextField(
-                controller: presenter.txt,
-                decoration: InputDecoration(
-                  contentPadding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                  hintText: MyConstants.enterName,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: const BorderSide(
-                        color: MyConstants.colorContentUnselected),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: const BorderSide(
-                        color: MyConstants.colorContentSelected),
-                  ),
-                ),
-              ),
-            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Expanded(
+                  child: TextField(
+                    controller: presenter.txt,
+                    decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 20),
+                      hintText: MyConstants.enterName,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: const BorderSide(
+                            color: MyConstants.colorContentUnselected),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: const BorderSide(
+                            color: MyConstants.colorContentSelected),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () => presenter.onClickButton(widget.callBack),
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(30),
                     ),
-                  fixedSize:const Size(150, 40),
+                    fixedSize: const Size(50, 50),
                   ),
                   child: const Text(MyConstants.ok),
-                )
+                ),
               ],
             ),
           ],

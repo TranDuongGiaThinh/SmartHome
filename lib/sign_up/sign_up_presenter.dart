@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SignUpPresenter{
+  static String message = "";
   static String username = "";
   TextEditingController txt = TextEditingController();
 
