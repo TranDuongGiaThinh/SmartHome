@@ -6,9 +6,11 @@ class Logo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: MyConstants.appBackground,
-      child: Image.asset("data/logo.png", fit: BoxFit.fill),
+    return Expanded(
+      child: Container(
+        color: MyConstants.appBackground,
+        child: Image.asset("data/logo.png", fit: BoxFit.fill),
+      ),
     );
   }
 }

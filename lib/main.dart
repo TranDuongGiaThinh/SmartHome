@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/home/home_screen.dart';
+import 'package:smart_home/sign_up/sign_up_presenter.dart';
+import 'package:smart_home/sign_up/sign_up_screen.dart';
 
 import 'constants.dart';
 import 'notification/noti_screen.dart';
@@ -47,37 +49,42 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    if (SignUpPresenter.username.isEmpty) {
+      return SignUpScreen(callBack: () => setState(() {}));
+    }
+
     return Scaffold(
       appBar: AppBar(
-          title: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            seletectedIndex == MyConstants.homeIndex
-                ? MyConstants.home
-                : MyConstants.noti,
-            style: const TextStyle(
-                fontSize: MyConstants.fontHeader,
-                color: MyConstants.colorTextWithBackground),
-          ),
-        ],
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              seletectedIndex == MyConstants.homeIndex
+                  ? MyConstants.home
+                  : MyConstants.noti,
+              style: const TextStyle(
+                  fontSize: MyConstants.fontHeader,
+                  color: MyConstants.colorTextWithBackground),
+            ),
+          ],
+        ),
+        backgroundColor: MyConstants.colorAppbar,
       ),
-      backgroundColor: MyConstants.colorAppbar,),
       body: buildContentSeletected(),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home,
                 color: seletectedIndex == MyConstants.homeIndex
-                    ? MyConstants.colorIconSelected
-                    : MyConstants.colorIconUnselected),
+                    ? MyConstants.colorContentSelected
+                    : MyConstants.colorContentUnselected),
             label: "",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications_active,
                 color: seletectedIndex == MyConstants.notiIndex
-                    ? MyConstants.colorIconSelected
-                    : MyConstants.colorIconUnselected),
+                    ? MyConstants.colorContentSelected
+                    : MyConstants.colorContentUnselected),
             label: "",
           ),
         ],
