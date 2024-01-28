@@ -8,6 +8,7 @@ class MyConstants {
   static const Color appBackground = Colors.greenAccent;
 
   static const Color colorText = Colors.black54;
+  static const Color colorMessage = Colors.redAccent;
   static const Color colorTextWithBackground = Colors.white;
   static const Color colorTextInSignUp = Colors.green;
 
@@ -31,6 +32,7 @@ class MyConstants {
   static const String appName = "SmartHome";
   static const String hello = "Xin Chào!";
   static const String wellcome = "Chào mừng bạn đến với $appName";
+  static const String logo = "data/logo.png";
 
   static const String home = "Trang chủ";
   static const String noti = "Thông báo";
@@ -43,4 +45,7 @@ class MyConstants {
 
   static const String enterName = "Nhập tên của bạn";
   static const String ok = "OK";
+  
+  static const String messageUsernameEmpty = "Tên không được bỏ trống!";
+  static const String messageUserNameOverLength = "Tên phải có độ dài dưới 50 ký tự!";
 }

@@ -42,7 +42,7 @@ class CustomButton extends StatelessWidget {
                 Switch(
                   value: device.isOn,
                   onChanged: (newValue) {
-                    presenter.onChangeValue(device);
+                    presenter.onClickButtonOnOff(device);
                   },
                 ),
               ],

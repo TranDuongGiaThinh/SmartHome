@@ -16,7 +16,7 @@ class DevicePresenter {
     ];
   }
 
-  onChangeValue(Device device) {
+  onClickButtonOnOff(Device device) {
     //sv
     device.isOn = !device.isOn;
     reload();

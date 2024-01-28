@@ -9,7 +9,7 @@ class Logo extends StatelessWidget {
     return Expanded(
       child: Container(
         color: MyConstants.appBackground,
-        child: Image.asset("data/logo.png", fit: BoxFit.fill),
+        child: Image.asset(MyConstants.logo, fit: BoxFit.fill),
       ),
     );
   }
