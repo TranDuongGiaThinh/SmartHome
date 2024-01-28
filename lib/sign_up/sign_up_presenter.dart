@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_home/constants.dart';
 
 class SignUpPresenter {
-  static String username = "";
+  static String username = "_";
   String message = "";
   TextEditingController txt = TextEditingController();
   bool isTextFieldFocus = false;
