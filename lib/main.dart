@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SmartHome',
+      title: MyConstants.appName,
       theme: ThemeData(primarySwatch: Colors.blue),
       debugShowCheckedModeBanner: false,
       home: const Home(),
@@ -71,7 +71,7 @@ class _HomeState extends State<Home> {
         backgroundColor: MyConstants.colorAppbar,
       ),
       body: buildContentSeletected(),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(backgroundColor: MyConstants.colorNavbar,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home,

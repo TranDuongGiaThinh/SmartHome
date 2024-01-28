@@ -11,17 +11,19 @@ class MyConstants {
   static const Color colorTextWithBackground = Colors.white;
   static const Color colorTextInSignUp = Colors.green;
 
-  static const Color colorContentSelected = Colors.green;
-  static const Color colorContentUnselected = Colors.black54;
+  static const Color colorContentSelected = Colors.yellowAccent;
+  static const Color colorContentUnselected = Colors.white;
 
   static const Color colorIcon = Colors.black54;
-  static const Color colorIconLightOn = Colors.yellowAccent;
-  static const Color colorIconLightOff = Colors.black54;
+  static const Color colorIconDeviceOn = Colors.yellowAccent;
+  static const Color colorIconDevicetOff = Colors.black54;
   static const Color colorIconPowerOn = Colors.redAccent;
   static const Color colorIconPowerOff = Colors.black54;
 
-  static const Color colorBackgroundApp = Colors.greenAccent;
+  static const Color colorBackgroundApp = Colors.white;
+  static const Color colorBackgroundContainer = Colors.greenAccent;
   static const Color colorAppbar = Colors.green;
+  static const Color colorNavbar = Colors.green;
   static const Color colorGuage = Colors.green;
   static const Color colorGuage20Percent = Colors.green;
   static const Color colorGuage35Percent = Colors.lightGreen;

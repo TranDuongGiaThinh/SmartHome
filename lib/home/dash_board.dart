@@ -21,7 +21,7 @@ class _DashboardState extends State<Dashboard> {
         height: MediaQuery.of(context).size.height /2.5,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: MyConstants.colorBackgroundApp,
+          color: MyConstants.colorBackgroundContainer,
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,

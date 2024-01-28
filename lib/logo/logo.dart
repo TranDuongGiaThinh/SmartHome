@@ -8,7 +8,7 @@ class Logo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        color: MyConstants.colorBackgroundApp,
+        color: MyConstants.colorBackgroundContainer,
         child: Image.asset(MyConstants.logo, fit: BoxFit.fill),
       ),
     );
