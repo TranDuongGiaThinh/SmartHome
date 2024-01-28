@@ -5,7 +5,6 @@ class MyConstants {
   static const double fontText = 13.0;
   static const double fontHeader = 16.0;
   
-  static const Color appBackground = Colors.greenAccent;
 
   static const Color colorText = Colors.black54;
   static const Color colorMessage = Colors.redAccent;
@@ -15,12 +14,21 @@ class MyConstants {
   static const Color colorContentSelected = Colors.green;
   static const Color colorContentUnselected = Colors.black54;
 
+  static const Color colorIcon = Colors.black54;
   static const Color colorIconLightOn = Colors.yellowAccent;
   static const Color colorIconLightOff = Colors.black54;
   static const Color colorIconPowerOn = Colors.redAccent;
   static const Color colorIconPowerOff = Colors.black54;
 
+  static const Color colorBackgroundApp = Colors.greenAccent;
   static const Color colorAppbar = Colors.green;
+  static const Color colorGuage = Colors.green;
+  static const Color colorGuage20Percent = Colors.green;
+  static const Color colorGuage35Percent = Colors.lightGreen;
+  static const Color colorGuage50Percent = Colors.yellow;
+  static const Color colorGuage65Percent = Colors.orange;
+  static const Color colorGuage80Percent = Colors.orange;
+  static const Color colorGuage100Percent = Colors.red;
   static const Color colorButton = Colors.greenAccent;
   static const Color colorCard = Colors.greenAccent;
 
@@ -50,4 +58,11 @@ class MyConstants {
   
   static const String messageUsernameEmpty = "Tên không được bỏ trống!";
   static const String messageUserNameOverLength = "Tên phải có độ dài dưới 50 ký tự!";
+
+  static const String unitCelsius = "°C";
+  static const String unitPercent = "%";
+  
+  static const String guageCelsius = "Nhiệt độ";
+  static const String guageHumidity = "Độ ẩm";
+  static const String guageUsage = "Thiết bị đang bật";
 }

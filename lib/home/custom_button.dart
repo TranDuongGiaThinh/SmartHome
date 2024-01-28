@@ -13,7 +13,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 10, bottom: 10, left: 40, right: 40),
-      margin: const EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           color: MyConstants.colorButton),

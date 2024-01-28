@@ -36,9 +36,9 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     return Padding(
       padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
-      child: Column(
+      child: ListView(
         children: [
-          const Dashboard(),
+          Dashboard(presenter: presenter!),
           for (int i = 0; i < presenter!.devices.length; i++)
             CustomButton(
               device: presenter!.devices[i],
