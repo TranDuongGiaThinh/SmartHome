@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "599786762337",
+    "project_id": "smarthome-9910d",
+    "storage_bucket": "smarthome-9910d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599786762337:android:016ffe7817684a0aa23a20",
+        "android_client_info": {
+          "package_name": "com.example.smart_home"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGNxOSFMLnw4cX6LPq8jwzqBYUf0Cfcgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
