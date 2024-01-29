@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/constants.dart';
+import 'package:smart_home/global/global.dart';
 
 class SignUpPresenter {
-  static String code = "";
-  static String username = "";
   String message = "";
   TextEditingController txtCode = TextEditingController();
   TextEditingController txtUsername = TextEditingController();
@@ -29,8 +28,8 @@ class SignUpPresenter {
     } else {
       checkCode(txtCode.text).then((value) {
         if (value) {
-          code = txtCode.text;
-          username = txtUsername.text;
+          GlobalData.code = txtCode.text;
+          GlobalData.username = txtUsername.text;
           callBack();
         }else{
           message = MyConstants.messageCodeInvalid;

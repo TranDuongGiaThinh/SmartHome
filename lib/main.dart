@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/home/home_screen.dart';
-import 'package:smart_home/sign_up/sign_up_presenter.dart';
 import 'package:smart_home/sign_up/sign_up_screen.dart';
 
 import 'constants.dart';
+import 'global/global.dart';
 import 'notification/noti_screen.dart';
 
 void main() {
@@ -34,6 +34,15 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int seletectedIndex = MyConstants.homeIndex;
 
+  @override
+  initState() {
+    super.initState();
+
+    GlobalData.loadLocalData().then((value) {
+      setState(() {});
+    });
+  }
+
   updateSeletectedIndex(int newIndex) {
     if (seletectedIndex != newIndex) {
       seletectedIndex = newIndex;
@@ -49,7 +58,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    if (SignUpPresenter.username.isEmpty) {
+    if (GlobalData.username.isEmpty) {
       return SignUpScreen(callBack: () => setState(() {}));
     }
 
@@ -71,7 +80,8 @@ class _HomeState extends State<Home> {
         backgroundColor: MyConstants.colorAppbar,
       ),
       body: buildContentSeletected(),
-      bottomNavigationBar: BottomNavigationBar(backgroundColor: MyConstants.colorNavbar,
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: MyConstants.colorNavbar,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home,
