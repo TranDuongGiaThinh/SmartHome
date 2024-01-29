@@ -14,6 +14,8 @@ class MyConstants {
   static const Color colorContentSelected = Colors.yellowAccent;
   static const Color colorContentUnselected = Colors.white;
 
+  static const Color colorTextFieldSelected = Colors.green;
+  static const Color colorTextFieldUnselected = Colors.black54;
   static const Color colorIcon = Colors.black54;
   static const Color colorIconDeviceOn = Colors.yellowAccent;
   static const Color colorIconDevicetOff = Colors.black54;
@@ -56,10 +58,15 @@ class MyConstants {
   static const String on = "Đang bật";
 
   static const String enterName = "Nhập tên của bạn";
+  static const String enterCode = "Nhập mã kết nối của bạn";
   static const String ok = "OK";
   
+  static const String messageCodeEmpty = "Mã kết nối không được bỏ trống!";
+  static const String messageCodeInvalid = "Mã kết nối không tồn tại!";
   static const String messageUsernameEmpty = "Tên không được bỏ trống!";
   static const String messageUserNameOverLength = "Tên phải có độ dài dưới 50 ký tự!";
+  static const String tooltipUsername = "Tên của bạn sẽ được lưu lại bên phần thông báo khi bạn tương tác với các thiết bị";
+  static const String tooltipCode = "Mã kết nối là mã của từng ngôi nhà. Nếu bạn chưa có mã kết nối hãy liên hệ với nhà cung cấp";
 
   static const String unitCelsius = "°C";
   static const String unitPercent = "%";
