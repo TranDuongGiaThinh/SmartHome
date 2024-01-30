@@ -11,16 +11,18 @@ class DevicePresenter {
 
   static Future<List<Device>> getDevices() async {
     return [
-      Device(id: 0, name: MyConstants.light, isOn: false),
-      Device(id: 1, name: MyConstants.fan, isOn: false),
-      Device(id: 2, name: MyConstants.tivi, isOn: false),
+      Device(id: "0", name: MyConstants.light, isOn: false, value: 0),
+      Device(id: "1", name: MyConstants.fan, isOn: false, value: 0),
+      Device(id: "2", name: MyConstants.tivi, isOn: false, value: 0),
     ];
   }
 
   onClickButtonTurnOffAll(BuildContext context) {
     if (getUsageRate() > 0) {
       ConfirmationDialog.show(
-              context: context, title: MyConstants.confirm, content: MyConstants.contentConfirmTurnOffAll)
+              context: context,
+              title: MyConstants.confirm,
+              content: MyConstants.contentConfirmTurnOffAll)
           .then((value) {
         if (value) {
           //sv
