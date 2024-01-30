@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/confirm_dialog/confirm_dialog.dart';
-import 'package:smart_home/models/device.dart';
+import 'package:smart_home/views/confirm_dialog/confirm_dialog.dart';
+import 'package:smart_home/data/models/device.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
 
 class DevicePresenter {
   DevicePresenter({required this.devices, required this.reload});

@@ -1,4 +1,4 @@
-import 'package:smart_home/models/noti.dart';
+import 'package:smart_home/data/models/noti.dart';
 
 class NotiPresenter {
   NotiPresenter({required this.notifications, required this.reload});

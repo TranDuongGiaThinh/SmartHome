@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/constants.dart';
-import 'package:smart_home/models/noti.dart';
-import 'package:smart_home/notification/noti_presenter.dart';
+import 'package:smart_home/data/models/noti.dart';
+import 'package:smart_home/views/notification/noti_presenter.dart';
 
 class NotiCard extends StatelessWidget {
   const NotiCard({super.key, required this.noti, required this.presenter});

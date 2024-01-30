@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/constants.dart';
-import 'package:smart_home/sign_up/custom_textfield.dart';
-import 'package:smart_home/sign_up/sign_up_presenter.dart';
+import 'package:smart_home/views/sign_up/custom_textfield.dart';
+import 'package:smart_home/views/sign_up/sign_up_presenter.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key, required this.callBack});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/constants.dart';
-import 'package:smart_home/home/device_presenter.dart';
-import 'package:smart_home/home/gauge.dart';
+import 'package:smart_home/views/home/device_presenter.dart';
+import 'package:smart_home/views/home/gauge.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key, required this.presenter});

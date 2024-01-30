@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/home/home_screen.dart';
-import 'package:smart_home/sign_up/sign_up_screen.dart';
+import 'package:smart_home/views/home/home_screen.dart';
+import 'package:smart_home/views/sign_up/sign_up_screen.dart';
 
 import 'constants.dart';
 import 'global/global.dart';
-import 'notification/noti_screen.dart';
+import 'views/notification/noti_screen.dart';
 
 void main() {
   runApp(const MyApp());

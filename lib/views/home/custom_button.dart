@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/constants.dart';
-import 'package:smart_home/home/device_presenter.dart';
-import 'package:smart_home/models/device.dart';
+import 'package:smart_home/views/home/device_presenter.dart';
+import 'package:smart_home/data/models/device.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton(

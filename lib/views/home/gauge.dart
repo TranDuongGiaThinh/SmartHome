@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/constants.dart';
-import 'package:smart_home/home/device_presenter.dart';
+import 'package:smart_home/views/home/device_presenter.dart';
 
 class Guage extends StatelessWidget {
   const Guage({

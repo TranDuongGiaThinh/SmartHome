@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/constants.dart';
-import 'package:smart_home/home/custom_button.dart';
-import 'package:smart_home/home/dash_board.dart';
-import 'package:smart_home/home/device_presenter.dart';
-import 'package:smart_home/logo/logo.dart';
+import 'package:smart_home/views/home/custom_button.dart';
+import 'package:smart_home/views/home/dash_board.dart';
+import 'package:smart_home/views/home/device_presenter.dart';
+import 'package:smart_home/views/logo/logo.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

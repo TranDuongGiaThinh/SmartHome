@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/sign_up/sign_up_presenter.dart';
-import '../constants.dart';
+import 'package:smart_home/views/sign_up/sign_up_presenter.dart';
+import '../../constants.dart';
 
 class CustomTextField extends StatefulWidget {
   const CustomTextField({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/constants.dart';
-import 'package:smart_home/notification/noti_presenter.dart';
+import 'package:smart_home/views/notification/noti_presenter.dart';
 import '../logo/logo.dart';
 import 'noti_card.dart';
 
