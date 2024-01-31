@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
   initState() {
     super.initState();
 
-    GlobalData.loadLocalData().then((value) {
+    GlobalData().load().then((value) {
       setState(() {});
     });
   }

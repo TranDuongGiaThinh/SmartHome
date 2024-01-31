@@ -8,7 +8,7 @@ class SignUpPresenter {
   TextEditingController txtUsername = TextEditingController();
   bool isTextFieldFocus = false;
 
-  Future<bool> checkCode(String code) async {
+  Future<bool> checkBoardName(String code) async {
     return true;
   }
 
@@ -26,12 +26,13 @@ class SignUpPresenter {
       reload();
       return;
     } else {
-      checkCode(txtCode.text).then((value) {
+      checkBoardName(txtCode.text).then((value) {
         if (value) {
-          GlobalData.code = txtCode.text;
+          GlobalData.boardname = txtCode.text;
           GlobalData.username = txtUsername.text;
+          GlobalData().save();
           callBack();
-        }else{
+        } else {
           message = MyConstants.messageCodeInvalid;
           reload();
         }
