@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:smart_home/data/repositories/data_local_repository.dart';
+import 'package:smart_home/global/global.dart';
 import 'package:smart_home/views/confirm_dialog/confirm_dialog.dart';
 import 'package:smart_home/data/models/device.dart';
 
@@ -80,5 +82,11 @@ class DevicePresenter {
     } else {
       return MyConstants.colorGuage100Percent;
     }
+  }
+
+  exitBoard(Function callBack) {
+    GlobalData().clear().then((value) {
+      callBack();
+    });
   }
 }

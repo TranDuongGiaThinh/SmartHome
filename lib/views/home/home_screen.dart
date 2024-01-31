@@ -6,7 +6,8 @@ import 'package:smart_home/views/home/device_presenter.dart';
 import 'package:smart_home/views/logo/logo.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, required this.callBack});
+  final Function callBack;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -41,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
         color: MyConstants.colorBackgroundApp,
         child: ListView(
           children: [
-            Dashboard(presenter: presenter!),
+            Dashboard(presenter: presenter!, callBack: widget.callBack,),
             for (int i = 0; i < presenter!.devices.length; i++)
               CustomButton(
                 device: presenter!.devices[i],

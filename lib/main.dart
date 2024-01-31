@@ -52,13 +52,13 @@ class _HomeState extends State<Home> {
 
   Widget buildContentSeletected() {
     return seletectedIndex == MyConstants.homeIndex
-        ? const HomeScreen()
+        ? HomeScreen(callBack: () => setState(() {}),)
         : const NotiScreen();
   }
 
   @override
   Widget build(BuildContext context) {
-    if (GlobalData.username.isEmpty) {
+    if (GlobalData.boardname.isEmpty) {
       return SignUpScreen(callBack: () => setState(() {}));
     }
 
