@@ -38,7 +38,11 @@ class DataLocal {
 
   Future<Map<String, dynamic>> getMap() async {
     try {
-      Map<String, dynamic> map = jsonDecode(await getStringJson());
+      Map<String, dynamic> map = {};
+      String jsonString = await getStringJson();
+      if (jsonString.isNotEmpty) {
+        map = jsonDecode(jsonString);
+      }
       if (kDebugMode) {
         print("getMap() thành công");
       }

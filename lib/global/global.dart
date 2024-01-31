@@ -7,7 +7,10 @@ class GlobalData {
 
   load() async {
     try {
-      GlobalData().fromJson(await DataLocal().getMap());
+      Map<String, dynamic> map = await DataLocal().getMap();
+      if (map.isNotEmpty) {
+        GlobalData().fromJson(map);
+      }
       if (kDebugMode) {
         print("Lấy dữ liệu local thành công");
       }
@@ -22,6 +25,11 @@ class GlobalData {
     await DataLocal().save(GlobalData().toJson());
   }
 
+  clear() async {
+    await DataLocal().clear();
+    boardname = "";
+  }
+
   fromJson(Map<String, dynamic> json) {
     username = json["username"];
     boardname = json["boardname"];
@@ -30,4 +38,3 @@ class GlobalData {
   Map<String, dynamic> toJson() =>
       {"username": username, "boardname": boardname};
 }
-
