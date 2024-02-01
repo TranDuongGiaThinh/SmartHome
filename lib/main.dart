@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
 
   Widget buildContentSeletected() {
     return seletectedIndex == MyConstants.homeIndex
-        ? HomeScreen(callBack: () => setState(() {}),)
+        ? HomeScreen(callBack: () => setState(() {}))
         : const NotiScreen();
   }
 

@@ -32,7 +32,10 @@ class _DashboardState extends State<Dashboard> {
               width: MediaQuery.of(context).size.height - 20,
               child: Row(
                 children: [
-                  const Icon(Icons.person, color: MyConstants.colorIcon,),
+                  const Icon(
+                    Icons.person,
+                    color: MyConstants.colorIcon,
+                  ),
                   Text(
                     GlobalData.username.toUpperCase(),
                     style: const TextStyle(
@@ -52,7 +55,7 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   IconButton(
                     onPressed: () =>
-                        widget.presenter.exitBoard(widget.callBack),
+                        widget.presenter.exitBoard(context, widget.callBack),
                     icon: const Icon(
                       Icons.logout,
                       color: MyConstants.colorIcon,

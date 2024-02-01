@@ -3,6 +3,7 @@ import 'package:smart_home/data/repositories/data_local_repository.dart';
 import 'package:smart_home/global/global.dart';
 import 'package:smart_home/views/confirm_dialog/confirm_dialog.dart';
 import 'package:smart_home/data/models/device.dart';
+import 'package:smart_home/views/details_device/details_device_screen.dart';
 
 import '../../constants.dart';
 
@@ -35,6 +36,13 @@ class DevicePresenter {
         }
       });
     }
+  }
+
+  onClickButtonDevice(BuildContext context, Device device) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => DetailDeviceScreen(device: device)));
   }
 
   onClickButtonOnOff(Device device) {
@@ -84,9 +92,17 @@ class DevicePresenter {
     }
   }
 
-  exitBoard(Function callBack) {
-    GlobalData().clear().then((value) {
-      callBack();
+  exitBoard(BuildContext context, Function callBack) {
+    ConfirmationDialog.show(
+      context: context,
+      title: MyConstants.confirm,
+      content: MyConstants.contentConfirmOutHome,
+    ).then((value) {
+      if (value) {
+        GlobalData().clear().then((value) {
+          callBack();
+        });
+      }
     });
   }
 }

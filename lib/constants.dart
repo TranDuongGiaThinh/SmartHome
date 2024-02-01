@@ -78,4 +78,5 @@ class MyConstants {
   static const String cancel = "Hủy bỏ";
   static const String confirm = "Xác nhận";
   static const String contentConfirmTurnOffAll = "Bạn muốn tắt tất cả thiết bị?";
+  static const String contentConfirmOutHome = "Bạn muốn thoát khỏi ngôi nhà này?";
 }

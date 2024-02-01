@@ -11,46 +11,50 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(top: 10, bottom: 10, left: 40, right: 40),
-      margin: const EdgeInsets.only(bottom: 5),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          color: MyConstants.colorButton),
-      child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Icon(
-                  presenter.getIconOfDevice(device),
-                  color: device.isOn
-                      ? MyConstants.colorIconDeviceOn
-                      : MyConstants.colorIconDevicetOff,
-                ),
-                Text(
-                  device.isOn
-                      ? "${device.name} (${MyConstants.on})"
-                      : device.name,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: MyConstants.fontHeader,
-                      color: MyConstants.colorText),
-                ),
-                IconButton(
-                  onPressed: () => presenter.onClickButtonOnOff(device),
-                  icon: Icon(
-                    Icons.power_settings_new,
+    return GestureDetector(
+      onTap: () => presenter.onClickButtonDevice(context, device),
+      child: Container(
+        padding:
+            const EdgeInsets.only(top: 10, bottom: 10, left: 40, right: 40),
+        margin: const EdgeInsets.only(bottom: 5),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            color: MyConstants.colorButton),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(
+                    presenter.getIconOfDevice(device),
                     color: device.isOn
-                        ? MyConstants.colorIconPowerOn
+                        ? MyConstants.colorIconDeviceOn
                         : MyConstants.colorIconDevicetOff,
                   ),
-                )
-              ],
-            ),
-          ]),
+                  Text(
+                    device.isOn
+                        ? "${device.name} (${MyConstants.on})"
+                        : device.name,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: MyConstants.fontHeader,
+                        color: MyConstants.colorText),
+                  ),
+                  IconButton(
+                    onPressed: () => presenter.onClickButtonOnOff(device),
+                    icon: Icon(
+                      Icons.power_settings_new,
+                      color: device.isOn
+                          ? MyConstants.colorIconPowerOn
+                          : MyConstants.colorIconDevicetOff,
+                    ),
+                  )
+                ],
+              ),
+            ]),
+      ),
     );
   }
 }
