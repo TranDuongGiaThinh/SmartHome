@@ -36,20 +36,21 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       );
     }
-    return Padding(
-      padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
-      child: Container(
-        color: MyConstants.colorBackgroundApp,
-        child: ListView(
-          children: [
-            Dashboard(presenter: presenter!, callBack: widget.callBack,),
-            for (int i = 0; i < presenter!.devices.length; i++)
-              CustomButton(
-                device: presenter!.devices[i],
-                presenter: presenter!,
-              )
-          ],
-        ),
+    return Container(
+      margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
+      color: MyConstants.colorBackgroundApp,
+      child: ListView(
+        children: [
+          Dashboard(
+            presenter: presenter!,
+            callBack: widget.callBack,
+          ),
+          for (int i = 0; i < presenter!.devices.length; i++)
+            CustomButton(
+              device: presenter!.devices[i],
+              presenter: presenter!,
+            )
+        ],
       ),
     );
   }

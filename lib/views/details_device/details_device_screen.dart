@@ -61,15 +61,21 @@ class _DetailDeviceScreenState extends State<DetailDeviceScreen> {
           ? Column(
               children: const [Logo()],
             )
-          : Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                DeviceInfo(device: widget.device),
-                NumUpDown(value: widget.device.value),
-                ListButton(presenter: presenter!)
-              ],
-            ),
+          : Container(
+            margin: const EdgeInsets.all(10),
+            color: MyConstants.colorBackgroundApp,
+            child: 
+              Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    DeviceInfo(device: widget.device),
+                    NumUpDown(value: widget.device.value),
+                    ListButton(presenter: presenter!)
+                  ],
+                ),
+            
+          ),
     );
   }
 }

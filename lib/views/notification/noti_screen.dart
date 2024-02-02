@@ -12,7 +12,6 @@ class NotiScreen extends StatefulWidget {
 }
 
 class _NotiScreenState extends State<NotiScreen> {
-  
   NotiPresenter? presenter;
 
   @override
@@ -35,19 +34,17 @@ class _NotiScreenState extends State<NotiScreen> {
         ],
       );
     }
-    return Padding(
-      padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
-      child: Container(
-        color: MyConstants.colorBackgroundApp,
-        child: ListView(
-          children: [
-            for (int i = 0; i < presenter!.notifications.length; i++)
-              NotiCard(
-                noti: presenter!.notifications[i],
-                presenter: presenter!,
-              ),
-          ],
-        ),
+    return Container(
+      margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
+      color: MyConstants.colorBackgroundApp,
+      child: ListView(
+        children: [
+          for (int i = 0; i < presenter!.notifications.length; i++)
+            NotiCard(
+              noti: presenter!.notifications[i],
+              presenter: presenter!,
+            ),
+        ],
       ),
     );
   }
