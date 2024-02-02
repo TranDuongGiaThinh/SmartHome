@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/data/repositories/data_local_repository.dart';
 import 'package:smart_home/global/global.dart';
 import 'package:smart_home/views/confirm_dialog/confirm_dialog.dart';
 import 'package:smart_home/data/models/device.dart';
@@ -42,7 +41,10 @@ class DevicePresenter {
     Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) => DetailDeviceScreen(device: device)));
+            builder: (context) => DetailDeviceScreen(
+                  device: device,
+                  callBack: reload,
+                )));
   }
 
   onClickButtonOnOff(Device device) {

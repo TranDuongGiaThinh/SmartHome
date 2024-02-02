@@ -4,12 +4,16 @@ import 'package:smart_home/data/models/device.dart';
 import 'package:smart_home/views/details_device/details_device_presenter.dart';
 import 'package:smart_home/views/details_device/device_info.dart';
 import 'package:smart_home/views/details_device/list_button.dart';
-import 'package:smart_home/views/details_device/num_up_down.dart';
 import 'package:smart_home/views/logo/logo.dart';
 
 class DetailDeviceScreen extends StatefulWidget {
-  const DetailDeviceScreen({super.key, required this.device});
+  const DetailDeviceScreen({
+    super.key,
+    required this.device,
+    required this.callBack,
+  });
   final Device device;
+  final Function callBack;
 
   @override
   State<DetailDeviceScreen> createState() => _DetailDeviceScreenState();
@@ -25,6 +29,7 @@ class _DetailDeviceScreenState extends State<DetailDeviceScreen> {
     presenter = DetailDevicePresenter(
       device: widget.device,
       reload: () => setState(() {}),
+      callback: widget.callBack,
     );
   }
 
@@ -40,7 +45,7 @@ class _DetailDeviceScreenState extends State<DetailDeviceScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    widget.device.name,
+                    presenter!.device.name,
                     style: const TextStyle(
                       fontSize: MyConstants.fontHeader,
                       color: MyConstants.colorTextWithBackground,
@@ -62,20 +67,18 @@ class _DetailDeviceScreenState extends State<DetailDeviceScreen> {
               children: const [Logo()],
             )
           : Container(
-            margin: const EdgeInsets.all(10),
-            color: MyConstants.colorBackgroundApp,
-            child: 
-              Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    DeviceInfo(device: widget.device),
-                    NumUpDown(value: widget.device.value),
-                    ListButton(presenter: presenter!)
-                  ],
-                ),
-            
-          ),
+              margin: const EdgeInsets.all(10),
+              width: MediaQuery.of(context).size.width - 20,
+              color: MyConstants.colorBackgroundApp,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  DeviceInfo(presenter: presenter!),
+                  ListButton(presenter: presenter!)
+                ],
+              ),
+            ),
     );
   }
 }

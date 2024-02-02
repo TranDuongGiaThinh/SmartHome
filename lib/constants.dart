@@ -30,8 +30,11 @@ class MyConstants {
   static const IconData iconTiviOn = Icons.tv;
   static const IconData iconTiviOff = Icons.tv_off;
   
-  static const IconData iconMode = Icons.mode;
-  static const IconData iconSchedule = Icons.tv_off;
+  static const IconData iconMode = Icons.change_circle_outlined;
+  static const IconData iconSchedule = Icons.watch_later_outlined;
+  static const IconData iconHaveSchedule = Icons.watch_later_rounded;
+  static const IconData iconUp = Icons.add;
+  static const IconData iconDown = Icons.remove;
 
   //colors
   static const Color colorText = Colors.black54;
@@ -62,6 +65,7 @@ class MyConstants {
   static const Color colorGuage80Percent = Colors.orange;
   static const Color colorGuage100Percent = Colors.red;
   static const Color colorButton = Colors.greenAccent;
+  static const Color colorButtonUpDown = Colors.green;
   static const Color colorCard = Colors.greenAccent;
 
   //texts
