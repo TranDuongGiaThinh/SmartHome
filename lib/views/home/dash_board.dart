@@ -33,7 +33,7 @@ class _DashboardState extends State<Dashboard> {
               child: Row(
                 children: [
                   const Icon(
-                    Icons.person,
+                    MyConstants.iconPerson,
                     color: MyConstants.colorIcon,
                   ),
                   Text(
@@ -57,7 +57,7 @@ class _DashboardState extends State<Dashboard> {
                     onPressed: () =>
                         widget.presenter.exitBoard(context, widget.callBack),
                     icon: const Icon(
-                      Icons.logout,
+                      MyConstants.iconLogout,
                       color: MyConstants.colorIcon,
                     ),
                   ),
@@ -76,7 +76,7 @@ class _DashboardState extends State<Dashboard> {
                     Guage(
                       name: MyConstants.guageCelsius,
                       value: 25,
-                      icon: Icons.thermostat,
+                      icon: MyConstants.iconCelsius,
                       unit: MyConstants.unitCelsius,
                       height: MediaQuery.of(context).size.height / 7,
                       presenter: widget.presenter,
@@ -84,7 +84,7 @@ class _DashboardState extends State<Dashboard> {
                     Guage(
                       name: MyConstants.guageHumidity,
                       value: 40,
-                      icon: Icons.water_drop_outlined,
+                      icon: MyConstants.iconHumidity,
                       unit: MyConstants.unitPercent,
                       height: MediaQuery.of(context).size.height / 7,
                       presenter: widget.presenter,

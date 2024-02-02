@@ -31,7 +31,7 @@ class CustomButton extends StatelessWidget {
                     presenter.getIconOfDevice(device),
                     color: device.isOn
                         ? MyConstants.colorIconDeviceOn
-                        : MyConstants.colorIconDevicetOff,
+                        : MyConstants.colorIconDeviceOff,
                   ),
                   Text(
                     device.isOn
@@ -48,7 +48,7 @@ class CustomButton extends StatelessWidget {
                       Icons.power_settings_new,
                       color: device.isOn
                           ? MyConstants.colorIconPowerOn
-                          : MyConstants.colorIconDevicetOff,
+                          : MyConstants.colorIconDeviceOff,
                     ),
                   )
                 ],
