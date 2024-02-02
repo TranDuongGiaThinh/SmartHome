@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/constants.dart';
-import 'package:smart_home/views/sign_up/custom_textfield.dart';
-import 'package:smart_home/views/sign_up/sign_up_presenter.dart';
+import 'package:smart_home/views/login/custom_textfield.dart';
+import 'package:smart_home/views/login/login_presenter.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key, required this.callBack});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key, required this.callBack});
   final Function callBack;
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
-  SignUpPresenter presenter = SignUpPresenter();
+class _LoginScreenState extends State<LoginScreen> {
+  LoginPresenter presenter = LoginPresenter();
 
   @override
   Widget build(BuildContext context) {

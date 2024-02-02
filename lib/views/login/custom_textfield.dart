@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/views/sign_up/sign_up_presenter.dart';
+import 'package:smart_home/views/login/login_presenter.dart';
 import '../../constants.dart';
 
 class CustomTextField extends StatefulWidget {
@@ -14,7 +14,7 @@ class CustomTextField extends StatefulWidget {
   final TextEditingController txt;
   final String label;
   final String tooltip;
-  final SignUpPresenter presenter;
+  final LoginPresenter presenter;
   final Function callBack;
 
   @override

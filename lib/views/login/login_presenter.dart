@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_home/constants.dart';
 import 'package:smart_home/global/global.dart';
 
-class SignUpPresenter {
+class LoginPresenter {
   String message = "";
   TextEditingController txtCode = TextEditingController();
   TextEditingController txtUsername = TextEditingController();

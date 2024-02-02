@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/views/home/home_screen.dart';
-import 'package:smart_home/views/sign_up/sign_up_screen.dart';
+import 'package:smart_home/views/login/login_screen.dart';
 
 import 'constants.dart';
 import 'global/global.dart';
@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     if (GlobalData.boardname.isEmpty) {
-      return SignUpScreen(callBack: () => setState(() {}));
+      return LoginScreen(callBack: () => setState(() {}));
     }
 
     return Scaffold(
