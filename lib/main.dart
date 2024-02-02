@@ -84,14 +84,14 @@ class _HomeState extends State<Home> {
         backgroundColor: MyConstants.colorNavbar,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home,
+            icon: Icon(MyConstants.iconHome,
                 color: seletectedIndex == MyConstants.homeIndex
                     ? MyConstants.colorContentSelected
                     : MyConstants.colorContentUnselected),
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications_active,
+            icon: Icon(MyConstants.iconNoti,
                 color: seletectedIndex == MyConstants.notiIndex
                     ? MyConstants.colorContentSelected
                     : MyConstants.colorContentUnselected),
